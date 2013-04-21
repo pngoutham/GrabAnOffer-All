@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws
+END
+PersistenceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws/PersistenceManager.java
+END
+Param.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws/Param.java
+END
+FileSystem.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws/FileSystem.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws/package-info.java
+END
+SearchIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws/SearchIndex.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws/ObjectFactory.java
+END
+Workspace.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/kubbe3/!svn/ver/18956/branches/CLF_Multitenant_2_1_2/kubbe-parent/kubbe-multi-tenant-utils/src/main/java/com/netexcompany/kubbe/multitenant/repository/workspace/ws/Workspace.java
+END
