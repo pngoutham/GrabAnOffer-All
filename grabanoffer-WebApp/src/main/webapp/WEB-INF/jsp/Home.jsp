@@ -8,6 +8,9 @@
 <title>Grab An Offer</title>
 <link href="http://fonts.googleapis.com/css?family=Arvo|Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" />
 <link href="./css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="./javascript/jquery/development-bundle/themes/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css"/>
+<script src="./javascript/jquery/js/jquery-1.4.2.min.js"></script>
+<script src="./javascript/jquery/development-bundle/ui/jquery-ui-1.7.2.custom.js"></script>
 <style>
 	#search-categories{
 		width: 780px;
@@ -48,7 +51,87 @@
 		border: 1px solid #CCCCCC;
 		box-shadow: 0 7px 5px #E7DFD7;
 	}
+	#collapse {
+	    background: url("./images/loginArrow.png") no-repeat scroll 53px 7px transparent;
+	    display: block;
+	    font-weight: bold;
+	    padding: 7px 29px 9px 10px !important;
+	    text-shadow: 1px 1px #FFFFFF;
+	}
+	.hide-sidebar2{
+		background: none repeat scroll 0 0 #107710;
+	    border: 1px solid #E7DFD7;
+	    border-radius: 0 10px 10px 0;
+	    color: #FFFFFF;
+	    font-weight: bold;
+	    margin-left: -31px;
+	    width: 36px;
+	}
+	
+.mn-dwn-arw {
+    border-color: #FFFFFF teal;
+    border-style: solid;
+    border-width: 4px 4px 0;
+    height: 0;
+    margin-left: 2px;
+    margin-top: 10px;
+    position: absolute;
+    width: 0;
+    background-color: #000;
+}
+.hdtb-mn-o, .hdtb-mn-c {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D6D6D6;
+    box-shadow: 0 2px 4px #D6D6D6;
+    color: #333333;
+    left: 943px;
+    line-height: 17px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: absolute;
+    top: 97px;
+    width: 100px;
+    z-index: 103;
+}
+
+.hdtb_mitem:hover {
+    background: none repeat scroll 0 0 #CCC;
+    color: #333333;
+}
 </style>
+<script>
+	function hideDiv(id){
+		$("#small-sidebar").show("slow");
+		$("#sidebar").hide("slow");
+	}
+	var heightSB;
+	function hideRecentOffersJS(id,btnId){
+		if(btnId == 'hideBtn'){
+			heightSB = $("#sidebar2").width();
+						 
+			$("#sidebar2").css("width","10px");
+			$("#sidebar2 li").css("transform","rotate(90deg)");
+			$("#"+id).hide();
+			$("#hideBtn").hide();
+			$("#showBtn").show();
+		}else if(btnId == 'showBtn'){
+			$("#"+id).show();	
+			$("#sidebar2").css("width",heightSB);
+			$("#sidebar2 li").css("transform","none");
+			$("#hideBtn").show();
+			$("#showBtn").hide();
+		}
+	}
+	function showMoreOptionsJs(moreDiv){
+		$("#"+moreDiv).show();
+	}
+	function moreOptionsJs(id,moreDiv){
+		$("#displayOption").html($("#"+id).html()+'&nbsp;&nbsp;');
+		$('<img class="plain-div" width="12px;" height="12px;" src="./images/close.png"/>').appendTo($("#displayOption"));
+		$("#displayOption").show();
+		$("#"+moreDiv).hide();
+	}
+</script>
 </head>
 <body>
 <div id="menu-wrapper" style="float:left;">
@@ -89,7 +172,7 @@
 							<form method="post" action="#">
 								<div style="width: 600px;">
 									<input class="txtStyle" type="text" name="s" value=""></input>
-									<input class="btnStyle" type="submit" value="Search"></input>
+									<input class="btnStyle" type="button" onclick="hideDiv(this.id);" value="Search"></input>
 								</div>
 							</form>
 						</div>
@@ -98,20 +181,59 @@
 						<div class="current_page_item" style="float:left"><a href="#">By&nbsp;Vendor</a></div>
 						<div  style="float:left"><a href="#">By&nbsp;Location</a></div>
 						<div  style="float:left"><a href="#">Others</a></div>
+						<div  style="float:right">
+				            <a href="#" id="collapse" ></a>
+					    </div>
 					</div>
+				</div>
+				
+				<div id="small-sidebar" style="display:none;">
+					<div id="small-search">
+						<form method="post" action="#">
+							<div style="width: 810px;float:left;padding: 6px 20px;">
+								<input class="small-txtStyle" type="text" name="s" value=""></input>
+								<input class="small-btnStyle" type="submit" value="Search"></input>&nbsp;&nbsp;
+								<label id="displayOption" style="display:none;color: #000000;font-weight: bold;border:1px solid #CCC;background:#CCC;margin-right:20px;padding:2px 2px 0 5px;border-radius:5px;">
+								</label>
+								<a style="float:right;padding: 6px 20px;" >
+									<span class="mn-hd-txt" onclick="showMoreOptionsJs('hdtb_more_mn');">More</span>
+									<span class="mn-dwn-arw"></span>
+								</a>
+								<div id="hdtb_more_mn" class="hdtb-mn-o" style="display:none;">
+									<div class="hdtb_mitem">
+										<a id="byLocation" onclick="moreOptionsJs(this.id,'hdtb_more_mn');">By Location</a>
+									</div>
+									<div class="hdtb_mitem">
+										<a id="byVendor" onclick="moreOptionsJs(this.id,'hdtb_more_mn');">By Vendor</a>
+									</div>
+									<div class="hdtb_mitem">
+										<a id="other" onclick="moreOptionsJs(this.id,'hdtb_more_mn');">Other</a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div style="clear: both;">&nbsp;</div>
+				<div style="width:500px;height:600px;">
+				
 				</div>				
 		</div>
 	</div>
 </div>
 	<div style="clear: both;">&nbsp;</div>
-</div> 
+</div>
+ 
 <div id="sidebar2" style="margin-top:10px;">
+		<div><input id="hideBtn" type="button" class="hide-sidebar2" value="&gt;&gt;" onclick="hideRecentOffersJS('recent-offers-table',this.id);"/></div>
+		<div><input id="showBtn" type="button" class="hide-sidebar2" style="display:none;" value="&lt;&lt;" onclick="hideRecentOffersJS('recent-offers-table',this.id);"/></div>
+		<div style="clear: both;">&nbsp;</div>
 		<ul>
 			<li>
-				<h2>Recent Offers</h2>
+				<h2>Recent&nbsp;Offers</h2>
 			</li>
 		</ul>
-		<table cellspacing="10" style="margin-left:-20px;"  width="240px">
+		<table id="recent-offers-table" cellspacing="10" style="margin-left:-20px;"  width="240px">
 			<tr>
 				<td valign="middle"><img class="plain-div" width="60px;" height="60px;" src="./images/thumbnails/gao.jpg"/><label style="margin:-7px 3px 2px 16px"> Flat 50% Discount</label></td>
 			</tr>
